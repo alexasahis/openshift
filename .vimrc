@@ -1,5 +1,4 @@
-set viminfo+=n~/app-root/data/.viminf
-o
+"set viminfo+=n~/app-root/data/.viminfo
 set nocompatible
 syntax on
 set tabstop=2
