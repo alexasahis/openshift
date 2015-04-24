@@ -1,0 +1,9 @@
+export PS1='[\W]'
+cd ~/app-root/runtime/repo
+cd ~/app-root/runtime
+history
+alias vim='vim -u ~/app-root/runtime/.vimrc'
+mysql -h $OPENSHIFT_MYSQL_DB_HOST -u $OPENSHIFT_MYSQL_DB_USERNAME --password=$OPENSHIFT_MYSQL_DB_PASSWORD
+mysqldump -h $OPENSHIFT_MYSQL_DB_HOST -u $OPENSHIFT_MYSQL_DB_USERNAME -p$OPENSHIFT_MYSQL_DB_PASSWORD km | gzip > tmp/km_`date +%y_%m_%d`.gz
+echo host:$OPENSHIFT_MYSQL_DB_HOST user:$OPENSHIFT_MYSQL_DB_USERNAME password:$OPENSHIFT_MYSQL_DB_PASSWORD
+echo "ssh://$OPENSHIFT_APP_UUID@$OPENSHIFT_APP_DNS/~/git/ruby.git/"
